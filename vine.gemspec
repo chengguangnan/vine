@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'Vine'
+  s.name        = 'vine'
   s.version     = '0.0.1'
   s.summary     = "Access nested hash."
   s.authors     = ["Cheng Guang-Nan"]
