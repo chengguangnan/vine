@@ -1,6 +1,12 @@
 # Vine - Access Nested Hash
 
 
+### Install
+
+    gem install vine
+
+### Usage
+
     require "vine"
 
     hash = { a: { b: 100 } }
@@ -8,5 +14,6 @@
 
     hash = { a: [ 100, 200 ] }
     hash.vine("a.0")
+
 
 
