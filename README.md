@@ -1,19 +1,25 @@
-# Vine - Access Nested Hash
+# Vine
 
 
 ### Install
 
     gem install vine
 
-### Usage
+### Setup
 
     require "vine"
 
-    hash = { a: { b: 100 } }
-    hash.vine("a.b")
+### Examples
 
-    hash = { a: [ 100, 200 ] }
-    hash.vine("a.0")
+    { a: [ 100, 200 ] }.access("a.0")
+    => 100 
+
+    { a: { b: 100 } }.access("a.b") 
+    => 100 
+
+    [1,2,3,4].segmentation(2)
+    => [[[1], [2, 3, 4]], [[1, 2], [3, 4]], [[1, 2, 3], [4]]] 
+
 
 
 
