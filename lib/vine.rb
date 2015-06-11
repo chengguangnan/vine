@@ -19,7 +19,7 @@ class Hash
       else
         ret = ret[p.to_s] || ret[p.to_sym]
       end
-      break unless ret
+      break if ret == nil
     end
     ret
   end
