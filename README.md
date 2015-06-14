@@ -13,9 +13,9 @@ This gem let you access nested Hash and List structures straightforwardly.
     {'availableForPickup': false}.fetch(:availableForPickup)
     => false
     
-### Example
+### Example 2
 
-I also added this method for segmentation.
+There is also a method for segmentation.
 
     [1,2,3,4].segmentation(2)
     => [[[1], [2, 3, 4]], 
