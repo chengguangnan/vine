@@ -12,22 +12,18 @@ end
 class Hash
   
   def access(path)
-    ret = self
+    value = self
+    
     path.to_s.split('.').each do |p|
       if p.to_i.to_s == p
-        ret = ret[p.to_i]
+        value = value[p.to_i]
       else
-        if ret[p.to_s] != nil
-          ret = ret[p.to_s]
-        elsif ret[p.to_sym] != nil
-          ret = ret[p.to_sym]
-        else
-          ret = nil
-        end
+        value = value[p.to_s] || value[p.to_sym]
       end
-      break if ret == nil
+      break if value.nil?
     end
-    ret
+    
+    value
   end
 
   alias :vine :access
