@@ -4,13 +4,13 @@ This gem let you access nested Hash and List structures straightforwardly.
 
 ### Example
 
-    { a: [ 100, 200 ] }.fetch("a.0")
+    { a: [ 100, 200 ] }.access("a.0")
     => 100 
 
-    { a: { b: 100 } }.fetch("a.b") 
+    { a: { b: 100 } }.access("a.b") 
     => 100 
     
-    {'availableForPickup': false}.fetch(:availableForPickup)
+    {'availableForPickup': false}.access(:availableForPickup)
     => false
     
 ### Example 2
