@@ -18,9 +18,7 @@ class Hash
       if p.to_i.to_s == p
         value = value[p.to_i]
       else
-        new_value = value[p.to_s]
-        new_value = value[p.to_sym] if new_value.nil?
-        value = new_value
+        value = value[p].nil? ? value[p.to_sym] : value[p]
       end
       break if value.nil?
     end
