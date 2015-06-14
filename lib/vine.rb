@@ -13,13 +13,13 @@ class Hash
   
   def access(path)
     ret = self
-    path.split('.').each do |p|
+    path.to_s.split('.').each do |p|
       if p.to_i.to_s == p
         ret = ret[p.to_i]
       else
         if ret[p.to_s] != nil
           ret = ret[p.to_s]
-        elsif ret[p.to_s] != nil
+        elsif ret[p.to_sym] != nil
           ret = ret[p.to_sym]
         else
           ret = nil
