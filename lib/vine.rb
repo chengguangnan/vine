@@ -17,9 +17,15 @@ class Hash
       if p.to_i.to_s == p
         ret = ret[p.to_i]
       else
-        ret = ret[p.to_s] || ret[p.to_sym]
+        if ret[p.to_s] != nil
+          ret = ret[p.to_s]
+        elsif ret[p.to_s] != nil
+          ret = ret[p.to_sym]
+        else
+          ret = nil
+        end
       end
-      break unless ret
+      break if ret == nil
     end
     ret
   end
