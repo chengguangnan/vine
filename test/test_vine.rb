@@ -1,7 +1,7 @@
 require_relative "../lib/vine"
 require "minitest/autorun"
 
-class TestMeme < MiniTest::Unit::TestCase
+class TestMeme < MiniTest::Test
 
   def test_access
     assert_equal 100,   { a: [ 100, 200 ] }.access("a.0")
