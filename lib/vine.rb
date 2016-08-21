@@ -26,6 +26,34 @@ class Hash
     value
   end
 
+  def set(path, value)
+    keys = []
+    path = path.to_s.split('.')
+
+    [*path, nil].each_cons(2) do |key,nextkey|
+      tmp_hash = keys.inject(self, :fetch)
+
+      if key.to_i.to_s == key
+        key = key.to_i
+      elsif tmp_hash[key].nil?
+        key = key.to_sym
+      end
+
+      if tmp_hash[key].nil?
+        tmp_hash[key] = {}
+      elsif nextkey.to_i.to_s == nextkey && !tmp_hash[key].is_a?(Array)
+        tmp_hash[key] = []
+      elsif !nextkey.nil? && !tmp_hash[key].is_a?(Hash)
+        tmp_hash[key] = {}
+      end
+
+      keys << key
+    end # each_cons
+
+    last_key = keys.pop
+    keys.inject(self, :fetch)[last_key] = value
+  end
+
   alias :vine :access
 
 end
