@@ -1,6 +1,6 @@
 # Vine
 
-This gem let you access and update nested Hash and List structures straightforwardly. 
+This gem let you quickly access and update nested Hash and List structures using a dot notation string. 
 
 ### Example
 
@@ -25,7 +25,13 @@ This gem let you access and update nested Hash and List structures straightforwa
     h.set("a.b.c", 100)
     => { a: { "b"=> {c: 100}, b1: [10] } }
 
+
 ### Example 3
+
+    h = { phone_numbers: [ { type: "mobile", num: 123 } ] }
+    h.set("phone_numbers.0.type", "fixed")
+
+### Example 4
 
 There is also a method for segmentation.
 

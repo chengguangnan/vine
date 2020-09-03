@@ -29,4 +29,10 @@ class TestMeme < MiniTest::Test
     h.set("a.e.c.1.f.2", 10)
     assert_equal 10,    h[:a][:e][:c][1][:f][2]
   end
+  
+  def test_hash_list
+    h = { phone_numbers: [ { type: "mobile", num: 123 } ] }
+    h.set("phone_numbers.0.type", "fixed")
+    assert_equal "fixed",    h.access("phone_numbers.0.type")
+  end
 end

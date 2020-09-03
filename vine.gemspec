@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'vine'
-  s.version     = '0.4'
+  s.version     = '0.5'
   s.licenses    = ['MIT']
   s.summary     = "Nested Hash accessing and Array segementation"
   s.description = "Access nested Hash (JSON) with a string path"
